@@ -1,7 +1,7 @@
 import { convertKelvinToCelsius, convertKelvinToFarenheit, getIcon, getTime } from "../lib/Helper";
 import humidityIcon from "../icons/humidity.svg";
 import thermometerIcon from "../icons/thermometer.svg";
-import { Card, Col, Flex, Image, Row } from "antd";
+import { Card, Flex, Image } from "antd";
 
 interface IWeatherCard {
   dateString: string;
