@@ -1,7 +1,8 @@
-import { convertKelvinToCelsius, convertKelvinToFarenheit, getIcon, getTime } from "../lib/Helper";
+import { Card, Flex, Image } from "antd";
+
 import humidityIcon from "../icons/humidity.svg";
 import thermometerIcon from "../icons/thermometer.svg";
-import { Card, Flex, Image } from "antd";
+import { convertKelvinToCelsius, convertKelvinToFarenheit, getIcon, getTime } from "../lib/Helper";
 
 interface IWeatherCard {
   dateString: string;
@@ -11,12 +12,11 @@ interface IWeatherCard {
 
 export const WeatherCard = (props: IWeatherCard) => {
   const { dateString, data, unit } = props
-  console.log(dateString)
 
   return (
-    <Card style={{ backgroundColor: "#ccc" }}>
-      <h4 style={{ color: "black" }}> {dateString} </h4>
-      <div className="weather-by-time-container">
+    <Card id="card">
+      <h3 style={{ color: "black" }}> {dateString} </h3>
+      <>
         {data.map((el) => {
           return (
             <Flex style={{ width: "100%" }} justify="space-between" align="center">
@@ -54,7 +54,7 @@ export const WeatherCard = (props: IWeatherCard) => {
             </Flex>
           );
         })}
-      </div>
+      </>
     </Card >
   )
 }
