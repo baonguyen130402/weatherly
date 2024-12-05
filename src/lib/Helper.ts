@@ -1,5 +1,4 @@
 import axios from "axios"
-import { useEffect, useRef, useState } from "react"
 
 export const getWeatherData = async (city: string) => {
   const endpoint = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${import.meta.env.VITE_API_KEY}`
