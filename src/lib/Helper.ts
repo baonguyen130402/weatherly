@@ -1,4 +1,5 @@
 import axios from "axios"
+import { useState } from "react"
 
 export const getWeatherData = async (city: string) => {
   const endpoint = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${import.meta.env.VITE_API_KEY}`
@@ -72,4 +73,25 @@ export const convertKelvinToFarenheit = (temperature: number) => {
   const formalTemp = temp + "°F";
 
   return formalTemp;
+}
+
+export function getCurrentTime() {
+  const newTime = new Date().toLocaleTimeString("en-us", {
+    hour: "numeric",
+    minute: "numeric",
+  });
+  const [currentTime, setCurrenTime] = useState(newTime);
+
+  function updateTime() {
+    const newTime = new Date().toLocaleTimeString("en-us", {
+      hour: "numeric",
+      minute: "numeric",
+    });
+
+    setCurrenTime(newTime);
+  }
+
+  setInterval(updateTime, 1000);
+
+  return currentTime;
 }
