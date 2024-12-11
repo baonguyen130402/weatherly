@@ -54,14 +54,14 @@ export const Mainlayout = () => {
             <Flex style={{ width: "100vw" }} justify="center" align="center" vertical>
               <Flex style={{ width: "25%", marginBottom: 8 }} justify="center" align="center" gap={4}>
                 <Input onChange={(event) => setCity(event.target.value)} placeholder="Your City Name..." />
-                <Button style={{borderColor: "white", borderWidth: "1px"}} type="primary" variant="outlined" onClick={() => handleButtonClick(city)}>Get Weather Forecast</Button>
+                <Button style={{ borderColor: "white", borderWidth: "1px" }} type="primary" variant="outlined" onClick={() => handleButtonClick(city)}>Get Weather Forecast</Button>
               </Flex>
               <SystemOfUnitsMenu setUnitFromChildComponent={setUnitFromChildComponet} />
             </Flex>
           </Col>
           <Flex vertical>
             <RenderIf isTrue={weatherData.length !== 0 ? true : false}>
-              <h1>{location.city}, {location.country}</h1>
+              <h1 style={{ textAlign: "left" }}>{location.city}, {location.country}</h1>
             </RenderIf>
             <Flex justify="center" align="start" gap={6}>
               {weatherData.map((el, key) => (
