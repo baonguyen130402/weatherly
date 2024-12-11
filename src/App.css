@@ -1,4 +1,4 @@
-@import url('./styles/animation.css') #root {
+#root {
   max-width: 1280px;
   /*margin: 0 auto;*/
   /*padding: 2rem;*/
@@ -74,46 +74,6 @@
   animation-delay: -5s;
   animation-direction: reverse;
   bottom: 10px;
-}
-
-.lightRain {
-  background-color: #53789e;
-}
-
-.overcastClouds0 {
-  background-color: #262524;
-}
-
-.overcastClouds3 {
-  background-color: #343334;
-}
-
-.overcastClouds6 {
-  background-color: #948c92;
-}
-
-.overcastClouds9 {
-  background-color: #a4a4ac;
-}
-
-.overcastClouds12 {
-  background-color: #d2d1d6;
-}
-
-.overcastClouds15 {
-  background-color: #aca4ac;
-}
-
-.overcastClouds18 {
-  background-color: #5c5c5c;
-}
-
-.overcastClouds21 {
-  background-color: #3e3835;
-}
-
-.brokenClouds {
-  background-color: #92bad2;
 }
 
 .systemUnit {
