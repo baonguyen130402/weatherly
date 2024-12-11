@@ -16,8 +16,8 @@ export const WeatherCard = (props: IWeatherCard) => {
 
   return (
     <>
-      <h3 style={{ color: "white", textAlign: "center" }}> {dateString} </h3>
-      <Card id="card" bodyStyle={{ paddingTop: 0, paddingBottom: 0 }} style={{ overflow: "hidden" }}>
+      <h3 style={{ color: "white", textAlign: "center", cursor: "default" }}> {dateString} </h3>
+      <Card id="card" bodyStyle={{ paddingTop: 0, paddingBottom: 0 }} style={{ overflow: "hidden", cursor: "default" }}>
         <>
           {data.map((el, key) => (
             <Flex
