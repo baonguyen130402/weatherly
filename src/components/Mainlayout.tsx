@@ -1,7 +1,5 @@
 import { useState } from "react"
 
-import clsx from "clsx"
-
 import { Button, Col, Flex, Image, Input, Row, Space } from "antd"
 
 import Logo from "/logo.png"
