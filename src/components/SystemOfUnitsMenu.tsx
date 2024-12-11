@@ -30,7 +30,7 @@ export const SystemOfUnitsMenu = (props: any) => {
   return (
     <Dropdown menu={{ items }}>
       <a onClick={(e) => e.preventDefault()}>
-        <Space>
+        <Space className="systemUnit">
           CHOOSE YOUR SYSTEM OF UNITS
           <DownOutlined />
         </Space>
