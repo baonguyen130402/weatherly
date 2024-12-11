@@ -75,7 +75,7 @@ export const Mainlayout = () => {
           <Col span={24}>
             <Flex style={{ width: "100vw" }} justify="center" align="center" vertical>
               <Flex style={{ width: "25%", marginBottom: 8 }} justify="center" align="center" gap={4}>
-                <Input onChange={(event) => setCity(event.target.value)} placeholder="Your City Name..." />
+                <Input onChange={(event) => setCity(event.target.value)} placeholder="Your City Name... ex: hanoi" />
                 <Button style={{ borderColor: "white", borderWidth: "1px" }} type="primary" variant="outlined" onClick={() => handleButtonClick(city)}>Get Weather Forecast</Button>
               </Flex>
               <SystemOfUnitsMenu setUnitFromChildComponent={setUnitFromChildComponet} />
