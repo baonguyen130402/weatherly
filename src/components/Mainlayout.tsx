@@ -55,7 +55,7 @@ export const Mainlayout = () => {
     }
   }
 
-  const className = getClassName(19)
+  const className = getClassName(currentTime)
 
   return (
     <main className={className} style={{ width: "100vw", height: "100vh", padding: 12 }}>
