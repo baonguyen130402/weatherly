@@ -1,13 +1,15 @@
 import { useState } from "react"
 
+import clsx from "clsx"
+
 import { Button, Col, Flex, Image, Input, Row, Space } from "antd"
 
 import Logo from "/logo.png"
 
 import { WeatherCard } from "./WeatherCard"
 import { RenderIf } from "../lib/RenderIf"
-import { getWeatherData } from "../lib/Helper"
 import { SystemOfUnitsMenu } from "./SystemOfUnitsMenu"
+import { getCurrentTime, getWeatherData } from "../lib/Helper"
 
 
 export const Mainlayout = () => {
@@ -29,10 +31,34 @@ export const Mainlayout = () => {
     })
   }
 
+  const currentTime = Number(getCurrentTime().split(":")[0])
+
   const setUnitFromChildComponet = (value: string) => setUnit(value)
 
+  console.log()
+
+  const getClassName = (currentTime: number) => {
+    if (currentTime >= 6 && currentTime <= 11) {
+      return "main-layout morning"
+    }
+
+    if (currentTime >= 12 && currentTime <= 15) {
+      return "main-layout midday"
+    }
+
+    if (currentTime >= 16 && currentTime <= 18) {
+      return "main-layout evening"
+    }
+
+    if (currentTime >= 19 && currentTime <= 23 || currentTime >= 0 && currentTime <= 5) {
+      return "main-layout night"
+    }
+  }
+
+  const className = getClassName(19)
+
   return (
-    <main id="main-layout" style={{ width: "100vw", height: "100vh", padding: 12 }}>
+    <main className={className} style={{ width: "100vw", height: "100vh", padding: 12 }}>
       <Flex justify='center' align='center' gap={30} vertical>
         <Row gutter={16}>
           <Col span={24}>

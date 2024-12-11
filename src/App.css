@@ -13,16 +13,32 @@
   color: #888;
 }
 
-#main-layout {
-  /*background: rgb(99, 0, 254);*/
-  /*background: linear-gradient(0deg, rgba(99, 0, 254, 1) 0%, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 1) 100%);*/
+.main-layout {
   position: relative;
 
   width: 100%;
   height: 100vh;
 
-  background-color: #3586ff;
+  /*background-color: #3586ff;*/
   overflow: hidden;
+}
+
+.main-layout.morning {
+  background-image: linear-gradient(to top, #209cff 0%, #68e0cf 100%);
+  /*background-image: linear-gradient(135deg, #ABDCFF 10%, #0396FF 100%);*/
+}
+
+.main-layout.midday {
+  background-image: linear-gradient(0deg, #008EC8 10%, #FFDCC0 100%);
+}
+
+.main-layout.evening {
+  background-image: linear-gradient(0deg, #231557 0%, #44107A 29%, #FF1361 67%, #FFF800 100%);
+}
+
+.main-layout.night {
+  background: rgb(99, 0, 254);
+  background: linear-gradient(0deg, rgba(99, 0, 254, 1) 0%, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 1) 100%);
 }
 
 #card {
