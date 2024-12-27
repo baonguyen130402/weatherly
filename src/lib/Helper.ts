@@ -76,11 +76,7 @@ export const convertKelvinToFarenheit = (temperature: number) => {
 }
 
 export function getCurrentTime() {
-  const newTime = new Date().toLocaleTimeString("en-us", {
-    hour: "numeric",
-    minute: "numeric",
-  });
-  const [currentTime, setCurrenTime] = useState(newTime);
+  const [currentTime, setCurrenTime] = useState('');
 
   function updateTime() {
     const newTime = new Date().toLocaleTimeString("en-us", {
@@ -88,10 +84,15 @@ export function getCurrentTime() {
       minute: "numeric",
     });
 
-    setCurrenTime(newTime);
+    if (newTime.split(' ')[1] === "PM") {
+      setCurrenTime((Number(newTime.split(' ')[0].split(':')[0]) + 12).toString())
+    } else {
+      setCurrenTime(newTime.split(' ')[0].split(':')[0]);
+    }
   }
 
   setInterval(updateTime, 1000);
+  console.log(currentTime)
 
   return currentTime;
 }

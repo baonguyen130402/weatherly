@@ -29,11 +29,9 @@ export const Mainlayout = () => {
     })
   }
 
-  const currentTime = Number(getCurrentTime().split(":")[0])
+  const currentTime = getCurrentTime()
 
   const setUnitFromChildComponet = (value: string) => setUnit(value)
-
-  console.log()
 
   const getClassName = (currentTime: number) => {
     if (currentTime >= 6 && currentTime <= 11) {
@@ -53,7 +51,8 @@ export const Mainlayout = () => {
     }
   }
 
-  const className = getClassName(currentTime)
+  console.log(currentTime)
+  const className = getClassName(Number(currentTime))
 
   return (
     <main className={className} style={{ width: "100vw", height: "100vh", padding: 12 }}>
